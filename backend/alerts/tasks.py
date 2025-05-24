@@ -1,7 +1,6 @@
 # alerts/tasks.py
 from celery import shared_task
 from .models import PriceAlert
-import requests
 
 def fetch_current_price(symbol):
     # Dummy logic - replace with real stock API call

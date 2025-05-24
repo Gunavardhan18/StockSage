@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'stock_tracker_db'),
         'USER': os.getenv('POSTGRES_USER', 'stockuser'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'stockpass'),
-        'HOST': os.getenv('POSTGRES_HOST', 'postgres'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
@@ -147,8 +147,6 @@ CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
-AUTH_USER_MODEL = 'users.CustomUser'
-
 
 SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,

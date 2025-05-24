@@ -5,13 +5,6 @@ from rest_framework import viewsets, permissions
 from .models import PriceAlert
 from .serializers import PriceAlertSerializer
 
-# Create your views here.
-from alerts.tasks import check_stock_price
-
-def test_stock_task(request):
-    check_stock_price.delay('AAPL')
-    return JsonResponse({'status': 'Task triggered'})
-
 
 class PriceAlertViewSet(viewsets.ModelViewSet):
     serializer_class = PriceAlertSerializer
